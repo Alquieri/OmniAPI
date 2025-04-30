@@ -12,7 +12,7 @@ Aqui você pode explorar, cadastrar, atualizar e deletar informações dos mais 
 - C# (.NET 8 ou superior)
 - ASP.NET Core Web API
 - Entity Framework Core
-- Banco de Dados (SQL Server)
+- Banco de Dados (MySQL)
 - Swagger (OpenAPI) para documentação interativa
 - Nextjs
 
