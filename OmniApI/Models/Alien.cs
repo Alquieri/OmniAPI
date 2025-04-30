@@ -10,6 +10,7 @@ namespace OmniApI.Models
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Especie { get; set; }
-        public string Palneta { get; set; }
+        public string Planeta { get; set; }
+        public string imagen {get; set; }
     }
 }
