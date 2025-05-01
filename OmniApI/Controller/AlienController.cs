@@ -14,11 +14,19 @@ namespace OmniApI.Models.Controllers
     [Route("api/[controller]")]
     public class AlienController : Controller
     {
-        private readonly AppDbContext _appDbContext; 
+        // private readonly AppDbContext _appDbContext; 
         
-        public AlienController(AppDbContext appDbContext)
+        // public AlienController(AppDbContext appDbContext)
+        // {
+        //     _appDbContext = appDbContext;
+        // }
+
+        [HttpGet]
+        public string GetAllAliens()
         {
-            _appDbContext = appDbContext;
+        
+            return "ok"; // Retorna a lista de aliens como resposta HTTP 200 (OK)
         }
+
     }
 }
