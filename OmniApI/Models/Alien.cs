@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OmniApI.Models
-{
+namespace OmniApi.Models;
+
     public class Alien
     {
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Especie { get; set; }
         public string Planeta { get; set; }
-        public string imagen {get; set; }
+        public string Imagem {get; set; }
     }
-}
+
