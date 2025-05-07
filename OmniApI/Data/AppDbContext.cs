@@ -9,6 +9,6 @@ namespace AlienDB.Data
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions options) : base(options) {}
-        public DbSet<Alien> Alien { get; set; } // Propriedade que representa a tabela "Alien" no banco de dados.
+        public DbSet<Alien> Aliens { get; set; } // Propriedade que representa a tabela "Alien" no banco de dados.
     }
 }
