@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AlienDB.Data;
 using Microsoft.EntityFrameworkCore;
-
+using OmniApI.Migrations;
+using OmniApi.Models;
 
 
 namespace OmniApI.Models.Controllers
@@ -20,6 +21,19 @@ namespace OmniApI.Models.Controllers
         {
              _appDbContext = appDbContext;
          }
+
+    [HttpPost]
+    public async Task<IActionResult> AddAlien(Alien alien)
+    {
+        if (alien == null) {
+            return BadRequest("Dados inválidos.");
+        }
+
+        _appDbContext.Aliens.Add(alien);
+        await _appDbContext.SaveChangesAsync();
+
+        return StatusCode(201, alien);
+    }
 
         
     }
