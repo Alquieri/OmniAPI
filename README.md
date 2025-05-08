@@ -33,11 +33,11 @@ Aqui você pode explorar, cadastrar, atualizar e deletar informações dos mais 
 ```bash
 OmniAPI/
 ├── Controllers/
-│   └── AliensController.cs
+│   └── AlienController.cs
 ├── Models/
 │   └── Alien.cs
 ├── Data/
-│   └── AlienContext.cs
+│   └── AppDbContext.cs
 ├── Program.cs
 ├── appsettings.json
 ```
@@ -51,8 +51,8 @@ OmniAPI/
   "id": 1,
   "nome": "Four Arms",
   "especie": "Tetramand",
-  "planetaOrigem": "Khoros",
-  "habilidades": "Super força, resistência física"
+  "planeta": "Khoros",
+  "imagem": "Link da imagem"
 }
 ```
 

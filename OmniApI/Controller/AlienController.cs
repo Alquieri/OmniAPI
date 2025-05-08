@@ -35,6 +35,19 @@ namespace OmniApI.Models.Controllers
         return StatusCode(201, alien);
     }
 
+    [HttpGet] 
+     public async Task<ActionResult<IEnumerable<Alien>>> GetPersonagens()   
+    {
+    
+        var personagens = await _appDbContext.Aliens.ToListAsync();
+        return Ok(personagens);
+
+    }
+
+    
+
         
+
+
     }
 }

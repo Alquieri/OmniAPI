@@ -33,6 +33,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-
-app.MapGet("/", () => "TESTE!");
 app.Run();
