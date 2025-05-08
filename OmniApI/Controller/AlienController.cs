@@ -44,6 +44,22 @@ namespace OmniApI.Models.Controllers
 
     }
 
+    [HttpGet("{id}")] 
+    public async Task<ActionResult<Alien>> GetPersonagem(int id)
+{
+ 
+    var alien = await _appDbContext.Aliens.FindAsync(id);
+
+  
+    if (alien == null)
+    {
+        return NotFound("Alien não encontrado no omnitrix!");
+    }
+
+  
+    return Ok(alien);
+}
+
     [HttpPut("{id}")] 
 public async Task<IActionResult> UpdateAlien(int id, [FromBody]Alien alienAtualizado)
 {
