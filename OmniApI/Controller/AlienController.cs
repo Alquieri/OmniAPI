@@ -25,15 +25,17 @@ namespace OmniApI.Models.Controllers
     [HttpPost]
     public async Task<IActionResult> AddAlien(Alien alien)
     {
-        if (alien == null) {
-            return BadRequest("Dados inválidos.");
-        }
+        if (!ModelState.IsValid) 
+    {
+        return BadRequest(ModelState); 
+    }
 
         _appDbContext.Aliens.Add(alien);
         await _appDbContext.SaveChangesAsync();
 
-        return Ok( alien);
+        return Created("", alien);
     }
+
 
     [HttpGet] 
      public async Task<ActionResult<IEnumerable<Alien>>> GetAliens()   
@@ -72,11 +74,16 @@ public async Task<IActionResult> UpdateAlien(int id, [FromBody]Alien alienAtuali
         return NotFound("Alien não encontrado no omnitrix.");
     }
 
+    if (!ModelState.IsValid) // Verifica se os dados enviados são válidos
+    {
+        return BadRequest(ModelState); // Retorna um erro 400 com os detalhes das validações que falharam
+    }
+
     _appDbContext.Entry(alienExistente).CurrentValues.SetValues(alienAtualizado);
 
     await _appDbContext.SaveChangesAsync();
 
-    return Ok(alienExistente);
+   return Created("", alienExistente);
 }
  
 
