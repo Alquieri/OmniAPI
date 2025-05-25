@@ -42,9 +42,8 @@ export default function Home() {
       setErro(err.message);
     }
   };
-
   return (
-    <div style={{ padding: '2rem', fontFamily: 'Arial', textAlign: 'center' }}>
+    <div>
       <h1>Buscar Alien</h1>
       <br/>
       <form onSubmit={buscarAlien}>
@@ -53,22 +52,21 @@ export default function Home() {
           placeholder="Digite o ID do Alien"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          style={{ padding: '0.5rem', width: '300px' }}
         />
-        <button type="submit" style={{ padding: '0.5rem', marginLeft: '1rem' }}>
+        <button type="submit">
           Buscar
         </button>
       </form>
 
-      {erro && <p style={{ color: 'red', marginTop: '30px' }}>{erro}</p>}
+      {erro && <p>{erro}</p>}
 
       {alien && (
-        <div style={{ marginTop: '2rem' }}>
+        <div>
           <h2>{alien.nome} (#{alien.id})</h2>
           <p><strong>Espécie:</strong> {alien.especie}</p>
           <p><strong>Planeta:</strong> {alien.planeta}</p>
           {alien.imagem && (
-            <img src={alien.imagem} alt={alien.nome} style={{ width: '200px', marginTop: '1rem' }} />
+            <img src={alien.imagem} alt={alien.nome} />
           )}
         </div>
       )}
