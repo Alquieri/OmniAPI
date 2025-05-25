@@ -28,17 +28,7 @@ export default function RootLayout({ children }) {
       >
         <div style={{ display: "flex" }}>
           <Sidebar />
-          <main
-            style={{
-              flex: 1,
-              padding: "1.5rem",
-              backgroundColor: "#181a1b",
-              minHeight: "100vh",
-              color: "#39ff14",
-              fontFamily: "var(--font-geist-sans), var(--font-geist-mono), monospace",
-              boxShadow: "0 0 24px #39ff1466 inset",
-            }}
-          >
+          <main>
             {children}
           </main>
         </div>
