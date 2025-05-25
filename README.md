@@ -9,11 +9,11 @@ Aqui você pode explorar, cadastrar, atualizar e deletar informações dos mais 
 
 ## 🚀 Tecnologias Utilizadas
 
-- C# (.NET 8 ou superior)
+- C# (.NET 7 ou superior)
 - ASP.NET Core Web API
 - Entity Framework Core
-- Banco de Dados (SQL Server)
-- Swagger (OpenAPI) para documentação interativa
+- Banco de Dados (MySQL)
+- Swagger
 - Nextjs
 
 ---
@@ -37,7 +37,7 @@ OmniAPI/
 ├── Models/
 │   └── Alien.cs
 ├── Data/
-│   └── AlienContext.cs
+│   └── AppDbContext.cs
 ├── Program.cs
 ├── appsettings.json
 ```
@@ -48,11 +48,11 @@ OmniAPI/
 
 ```json
 {
-  "id": 1,
-  "nome": "Four Arms",
-  "especie": "Tetramand",
-  "planetaOrigem": "Khoros",
-  "habilidades": "Super força, resistência física"
+  "id": 0,
+  "nome": "string",
+  "especie": "string",
+  "planeta": "string",
+  "imagem": "string"
 }
 ```
 
@@ -93,8 +93,47 @@ dotnet run
 6. Acesse o Swagger na URL:
 
 ```
-https://localhost:5001/swagger
+https://localhost:5154/swagger
 ```
+
+
+---
+
+## 🖥️ Frontend (Next.js)
+
+### Acesse a pasta do frontend:
+
+```bash
+cd ominiapiclient
+```
+
+### Instale as dependências:
+
+```bash
+npm install
+```
+
+### Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+### Acesse o painel:
+
+```
+http://localhost:3000
+```
+
+---
+
+⚠️ **Importante:**
+
+* A **API** deve estar rodando em:
+  `http://localhost:5154`
+  para que o **frontend** consiga se comunicar.
+
+* No código do **Next.js**, altere a **base URL** se mudar a porta ou o ambiente.
 
 
 # 👽 It's hero time!
