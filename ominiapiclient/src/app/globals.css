@@ -3,8 +3,14 @@ main {
   flex-direction: column;
   min-height: 100vh;
   width: 100vw;
+  /* Fade-in animation */
+  animation: fadeInMain 1s ease;
 }
 
+@keyframes fadeInMain {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
 
 body {
   color: var(--foreground);
@@ -13,7 +19,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  /* Subtle background animation */
+  background: linear-gradient(120deg, #000300 0%, #003300 100%);
+  background-size: 200% 200%;
+  animation: bgMove 8s ease-in-out infinite alternate;
 }
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%;}
+  100% { background-position: 100% 50%;}
+}
+
 input {
   display: block;
   margin: 0 auto 16px auto;
@@ -24,14 +40,22 @@ input {
   padding: 10px 16px;
   font-size: 1rem;
   font-family: 'Consolas', 'Courier New', monospace;
-  box-shadow: 0 0 8px #00ff41;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 8px #00ff41, 0 0 32px #00ff4122 inset;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  /* Neon glow animation */
+  animation: neonPulse 2s infinite alternate;
+}
+
+@keyframes neonPulse {
+  from { box-shadow: 0 0 8px #00ff41, 0 0 32px #00ff4122 inset;}
+  to { box-shadow: 0 0 16px #39ff14, 0 0 48px #39ff1444 inset;}
 }
 
 input:focus {
   outline: none;
   border-color: #39ff14;
-  box-shadow: 0 0 16px #39ff14;
+  box-shadow: 0 0 24px #39ff14, 0 0 64px #39ff1444 inset;
+  transform: scale(1.03);
 }
 
 button {
@@ -44,4 +68,46 @@ button {
   font-family: 'Consolas', 'Courier New', monospace;
   box-shadow: 0 0 8px #00ff41;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  left: -75%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, #00ff41aa, transparent);
+  transform: skewX(-20deg);
+  transition: left 0.4s;
+  pointer-events: none;
+}
+
+button:hover {
+  box-shadow: 0 0 24px #39ff14, 0 0 64px #39ff1444 inset;
+  transform: scale(1.04);
+}
+
+button:hover::after {
+  left: 120%;
+}
+
+a.semimagem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00ff41;
+  text-decoration: none;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-weight: bold;
+}
+
+a.semimagem:hover,
+a.semimagem:focus {
+  color: #39ff14;
+  text-shadow: 0 0 16px #39ff14, 0 0 32px #39ff1444;
+  outline: none;
 }

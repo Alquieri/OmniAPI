@@ -1,0 +1,48 @@
+.sidebar {
+  width: 16rem;
+  height: 100vh;
+  background: #111;
+  color: #fff;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-right: 4px solid #43c654;
+  box-shadow: 0 0 24px #43c65455;
+  transition: box-shadow 0.3s ease;
+}
+
+.sidebar h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 0 3px #43c65499;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.125rem;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #43c654;
+  border-radius: 8px;
+  background: rgba(67, 198, 84, 0.08);
+  transition: background 0.2s ease, transform 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.link:hover {
+  background: rgba(67, 198, 84, 0.18);
+  transform: translateX(4px);
+  box-shadow: 0 0 12px #43c65488;
+  border-color: #4ef06a;
+}

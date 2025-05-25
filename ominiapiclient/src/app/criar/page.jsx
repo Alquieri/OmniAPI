@@ -1,4 +1,7 @@
 "use client";
+import React from "react";
+import Link from "next/link";
+import "../globals.css";
 
 import { useState } from "react";
 
@@ -80,7 +83,18 @@ export default function Criar() {
                     value={form.imagem}
                     onChange={handleChange}
                 />
-                <button type="submit">Criar</button>
+
+                <a
+                    href="https://dontpad.com/imagensOmniApi"
+                    className="semimagem"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Sem imagem ?
+                </a>
+                <div style={{ marginTop: "32px" }}>
+                    <button type="submit">Criar</button>
+                </div>
             </form>
 
             {mensagem && <p>{mensagem}</p>}
