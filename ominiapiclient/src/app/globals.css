@@ -1,3 +1,6 @@
+
+
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -6,8 +9,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
-
 input {
+  display: block;
+  margin: 0 auto 16px auto;
   background: #000300;
   color: #00ff41;
   border: 2px solid #00ff41;
